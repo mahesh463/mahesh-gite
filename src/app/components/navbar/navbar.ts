@@ -1,13 +1,16 @@
-import { Component, signal, HostListener, OnInit } from '@angular/core';
+import { Component, signal, HostListener, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-navbar',
   imports: [CommonModule],
   templateUrl: './navbar.html',
-  styleUrl: './navbar.css'
+  styleUrl: './navbar.css',
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
+  readonly themeService = inject(ThemeService);
+
   isScrolled = signal(false);
   isMobileMenuOpen = signal(false);
   linkedin = 'https://www.linkedin.com/in/mahesh-gite-669738313/';
@@ -22,21 +25,17 @@ export class NavbarComponent implements OnInit {
     { label: 'Contact', href: '#contact' },
   ];
 
-  ngOnInit() {
-    document.documentElement.removeAttribute('data-theme');
-    document.documentElement.classList.remove('dark');
-    try {
-      localStorage.removeItem('mahesh_theme');
-    } catch (e) {}
-  }
-
   @HostListener('window:scroll', [])
   onWindowScroll() {
     this.isScrolled.set(window.scrollY > 20);
   }
 
+  toggleTheme() {
+    this.themeService.toggleTheme();
+  }
+
   toggleMobileMenu() {
-    this.isMobileMenuOpen.update(v => !v);
+    this.isMobileMenuOpen.update((v) => !v);
   }
 
   closeMobileMenu() {

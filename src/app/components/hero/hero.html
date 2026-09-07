@@ -1,19 +1,27 @@
 <section class="relative pt-32 pb-16 md:pt-36 md:pb-24 overflow-hidden">
   <!-- Ambient Floating Mesh Orbs -->
-  <div class="absolute top-10 left-1/12 w-80 h-80 sm:w-96 sm:h-96 bg-blue-400/15 rounded-full blur-3xl pointer-events-none -z-10 animate-float-slow"></div>
-  <div class="absolute bottom-10 right-1/12 w-80 h-80 sm:w-96 sm:h-96 bg-purple-400/15 rounded-full blur-3xl pointer-events-none -z-10 animate-float-reverse"></div>
-  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-indigo-300/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+  <div
+    class="absolute top-10 left-1/12 w-80 h-80 sm:w-96 sm:h-96 bg-blue-400/15 rounded-full blur-3xl pointer-events-none -z-10 animate-float-slow"
+  ></div>
+  <div
+    class="absolute bottom-10 right-1/12 w-80 h-80 sm:w-96 sm:h-96 bg-purple-400/15 rounded-full blur-3xl pointer-events-none -z-10 animate-float-reverse"
+  ></div>
+  <div
+    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-indigo-300/10 rounded-full blur-3xl pointer-events-none -z-10"
+  ></div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
-      
       <!-- Hero Left: Bio & Actions -->
       <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-        
         <!-- Status Pill with Radar Pulse -->
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100/90 border border-slate-200 shadow-sm backdrop-blur-sm">
+        <div
+          class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100/90 border border-slate-200 shadow-sm backdrop-blur-sm"
+        >
           <span class="relative flex h-2.5 w-2.5">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span
+              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"
+            ></span>
             <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
           </span>
           <span class="text-xs font-semibold text-slate-700 tracking-wide font-mono">
@@ -23,13 +31,21 @@
 
         <!-- Main Heading & Name with Logo in Front of Title -->
         <div class="space-y-3">
-          <p class="text-xs sm:text-sm font-semibold uppercase tracking-widest text-slate-500 font-mono">
+          <p
+            class="text-xs sm:text-sm font-semibold uppercase tracking-widest text-slate-500 font-mono"
+          >
             Hello, Welcome to my Developer Space
           </p>
-          <div class="flex items-center justify-center lg:justify-start gap-3 sm:gap-4 md:gap-5 flex-wrap sm:flex-nowrap">
+          <div
+            class="flex items-center justify-center lg:justify-start gap-3 sm:gap-4 md:gap-5 flex-wrap sm:flex-nowrap"
+          >
             <!-- Official Brand Logo in Front of Title (Perfect Circle) -->
-            <div class="relative w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-logo-circle p-[2.5px] bg-gradient-to-tr from-blue-600 via-indigo-600 to-purple-600 shadow-xl shadow-blue-500/25 shrink-0 hover:scale-105 transition-all duration-300">
-              <div class="w-full h-full rounded-logo-circle bg-white flex items-center justify-center overflow-hidden">
+            <div
+              class="relative w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-logo-circle p-[2.5px] bg-gradient-to-tr from-blue-600 via-indigo-600 to-purple-600 shadow-xl shadow-blue-500/25 shrink-0 hover:scale-105 transition-all duration-300"
+            >
+              <div
+                class="w-full h-full rounded-logo-circle bg-white flex items-center justify-center overflow-hidden"
+              >
                 <img
                   src="assets/Mahesh_gite_logo.png"
                   alt="Mahesh Gite Logo"
@@ -38,12 +54,18 @@
                 />
               </div>
             </div>
-            <h1 class="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-slate-900 leading-[1.1]">
+            <h1
+              class="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-slate-900 leading-[1.1]"
+            >
               Mahesh <span class="gradient-text">Gite</span>
             </h1>
           </div>
-          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2 pt-1 min-h-[38px]">
-            <span class="text-base sm:text-xl md:text-2xl font-bold text-blue-600 font-mono inline-flex items-center">
+          <div
+            class="flex flex-wrap items-center justify-center lg:justify-start gap-2 pt-1 min-h-[38px]"
+          >
+            <span
+              class="text-base sm:text-xl md:text-2xl font-bold text-blue-600 font-mono inline-flex items-center"
+            >
               <span>{{ displayedRole() }}</span>
               <span class="typing-cursor"></span>
             </span>
@@ -55,18 +77,41 @@
         </div>
 
         <!-- Description from Resume -->
-        <p class="text-sm sm:text-base md:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-          Dedicated Software Developer engineering robust enterprise web applications with 
-          Angular, TypeScript, and modern front-end architectures. Proven experience in developing large-scale audit platforms (LIMA), vendor management systems, modular reactive forms, and high-throughput REST API integrations.
+        <p
+          class="text-sm sm:text-base md:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0"
+        >
+          Dedicated Software Developer engineering robust enterprise web applications with Angular,
+          TypeScript, and modern front-end architectures. Proven experience in developing
+          large-scale audit platforms (LIMA), vendor management systems, modular reactive forms, and
+          high-throughput REST API integrations.
         </p>
 
         <!-- Quick Contacts Strip -->
-        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2 sm:gap-2.5 pt-1">
+        <div
+          class="flex flex-wrap items-center justify-center lg:justify-start gap-2 sm:gap-2.5 pt-1"
+        >
           <!-- Location -->
-          <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white border border-slate-200 shadow-sm text-xs font-medium text-slate-700 hover:border-slate-300 transition-all">
-            <svg class="w-3.5 h-3.5 text-slate-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+          <div
+            class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white border border-slate-200 shadow-sm text-xs font-medium text-slate-700 hover:border-slate-300 transition-all"
+          >
+            <svg
+              class="w-3.5 h-3.5 text-slate-500 shrink-0"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+              />
             </svg>
             <span>{{ location }}</span>
           </div>
@@ -76,8 +121,18 @@
             [href]="'mailto:' + email"
             class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white border border-slate-200 shadow-sm hover:border-blue-500 hover:text-blue-600 transition-all text-xs font-medium text-slate-700 hover:shadow-md"
           >
-            <svg class="w-3.5 h-3.5 text-blue-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            <svg
+              class="w-3.5 h-3.5 text-blue-600 shrink-0"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              />
             </svg>
             <span>{{ email }}</span>
           </a>
@@ -87,8 +142,18 @@
             [href]="'tel:' + phone"
             class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white border border-slate-200 shadow-sm hover:border-emerald-500 hover:text-emerald-700 transition-all text-xs font-medium text-slate-700 hover:shadow-md"
           >
-            <svg class="w-3.5 h-3.5 text-emerald-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+            <svg
+              class="w-3.5 h-3.5 text-emerald-600 shrink-0"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+              />
             </svg>
             <span>{{ phone }}</span>
           </a>
@@ -101,14 +166,18 @@
             class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-sky-50 border border-sky-200 shadow-sm hover:border-sky-500 hover:text-sky-700 transition-all text-xs font-medium text-sky-800 hover:shadow-md"
           >
             <svg class="w-3.5 h-3.5 text-sky-600 fill-current shrink-0" viewBox="0 0 24 24">
-              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z"/>
+              <path
+                d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z"
+              />
             </svg>
             <span>LinkedIn</span>
           </a>
         </div>
 
         <!-- Action CTAs: LinkedIn, Explore Projects, Contact -->
-        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-3">
+        <div
+          class="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-3"
+        >
           <!-- LinkedIn CTA Button with Shimmer -->
           <a
             [href]="linkedin"
@@ -117,7 +186,9 @@
             class="btn-primary-glow w-full sm:w-auto justify-center px-6 sm:px-7 py-3.5 rounded-2xl font-bold text-white inline-flex items-center gap-2 text-sm shadow-md cursor-pointer"
           >
             <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24">
-              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z"/>
+              <path
+                d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z"
+              />
             </svg>
             <span>LinkedIn Profile</span>
           </a>
@@ -125,87 +196,140 @@
           <!-- Explore Projects Button -->
           <a
             href="#projects"
-            class="w-full sm:w-auto justify-center px-5 sm:px-6 py-3.5 rounded-2xl font-semibold text-slate-700 bg-white border border-slate-300 hover:border-blue-500 hover:text-blue-600 transition-all inline-flex items-center gap-2 text-sm shadow-sm hover:shadow-md hover:-translate-y-0.5"
+            class="w-full sm:w-auto justify-center px-5 sm:px-6 py-3.5 rounded-2xl font-semibold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-800/80 border border-slate-300 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all inline-flex items-center gap-2 text-sm shadow-sm hover:shadow-md hover:-translate-y-0.5"
           >
             <span>View Projects</span>
-            <svg class="w-4 h-4 text-blue-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            <svg
+              class="w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              />
             </svg>
           </a>
 
           <!-- Contact Button -->
           <a
             href="#contact"
-            class="w-full sm:w-auto justify-center px-5 sm:px-6 py-3.5 rounded-2xl font-semibold text-slate-600 bg-slate-100 hover:bg-slate-200 hover:text-slate-900 transition-all inline-flex items-center gap-2 text-sm hover:-translate-y-0.5"
+            class="w-full sm:w-auto justify-center px-5 sm:px-6 py-3.5 rounded-2xl font-semibold text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-800/50 hover:bg-slate-200 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition-all inline-flex items-center gap-2 text-sm hover:-translate-y-0.5"
           >
             <span>Contact Me</span>
-            <svg class="w-4 h-4 text-slate-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            <svg
+              class="w-4 h-4 text-slate-500 dark:text-slate-400 shrink-0"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
+              />
             </svg>
           </a>
         </div>
-
       </div>
 
       <!-- Hero Right: Photo Portrait Showcase Card -->
       <div class="lg:col-span-5">
         <div class="relative mx-auto max-w-[280px] sm:max-w-sm md:max-w-md animate-float-portrait">
           <!-- Multi-color halo glow behind portrait -->
-          <div class="absolute -inset-1.5 bg-gradient-to-tr from-blue-600 via-indigo-500 to-purple-600 rounded-3xl blur-md opacity-25 group-hover:opacity-50 transition duration-500"></div>
+          <div
+            class="absolute -inset-1.5 bg-gradient-to-tr from-blue-600 via-indigo-500 to-purple-600 rounded-3xl blur-md opacity-25 group-hover:opacity-50 transition duration-500"
+          ></div>
 
           <!-- Portrait Card Container -->
-          <div class="relative rounded-3xl p-3 bg-white/95 backdrop-blur-sm border border-slate-200/90 shadow-2xl">
-            
+          <div
+            class="relative rounded-3xl p-3 bg-white/95 dark:bg-slate-900/90 backdrop-blur-sm border border-slate-200/90 dark:border-slate-800 shadow-2xl"
+          >
             <!-- Photo Frame with CSS Background Fallback & Img -->
-            <div class="relative overflow-hidden rounded-2xl aspect-[3/4] bg-slate-100 shadow-inner group hero-portrait">
+            <div
+              class="relative overflow-hidden rounded-2xl aspect-[3/4] bg-slate-100 dark:bg-slate-800 shadow-inner group hero-portrait"
+            >
               <img
                 src="assets/Mahesh_img.png"
                 alt="Mahesh Gite - Software Developer"
                 class="w-full h-full object-cover object-top rounded-2xl group-hover:scale-105 transition-transform duration-700 ease-out"
                 loading="eager"
               />
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-slate-900/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              ></div>
             </div>
-
           </div>
 
           <!-- Micro-Metrics Grid Beneath Photo -->
           <div class="grid grid-cols-3 gap-1.5 sm:gap-2.5 mt-4">
-            <div class="glass-card p-2 sm:p-3 rounded-xl text-center hover:border-blue-400 transition-all hover:scale-105">
-              <div class="text-lg sm:text-2xl font-extrabold text-blue-600">2+</div>
-              <div class="text-[10px] sm:text-[11px] font-semibold text-slate-600 mt-0.5 leading-tight">Enterprise Projects</div>
+            <div
+              class="glass-card p-2 sm:p-3 rounded-xl text-center hover:border-blue-400 transition-all hover:scale-105"
+            >
+              <div class="text-lg sm:text-2xl font-extrabold text-blue-600 dark:text-blue-400">
+                2+
+              </div>
+              <div
+                class="text-[10px] sm:text-[11px] font-semibold text-slate-600 dark:text-slate-400 mt-0.5 leading-tight"
+              >
+                Enterprise Projects
+              </div>
             </div>
-            <div class="glass-card p-2 sm:p-3 rounded-xl text-center hover:border-indigo-400 transition-all hover:scale-105">
-              <div class="text-lg sm:text-2xl font-extrabold text-indigo-600">100%</div>
-              <div class="text-[10px] sm:text-[11px] font-semibold text-slate-600 mt-0.5 leading-tight">Responsive UI</div>
+            <div
+              class="glass-card p-2 sm:p-3 rounded-xl text-center hover:border-indigo-400 transition-all hover:scale-105"
+            >
+              <div class="text-lg sm:text-2xl font-extrabold text-indigo-600 dark:text-indigo-400">
+                100%
+              </div>
+              <div
+                class="text-[10px] sm:text-[11px] font-semibold text-slate-600 dark:text-slate-400 mt-0.5 leading-tight"
+              >
+                Responsive UI
+              </div>
             </div>
-            <div class="glass-card p-2 sm:p-3 rounded-xl text-center hover:border-purple-400 transition-all hover:scale-105">
-              <div class="text-lg sm:text-2xl font-extrabold text-slate-800">Clean</div>
-              <div class="text-[10px] sm:text-[11px] font-semibold text-slate-600 mt-0.5 leading-tight">Code Quality</div>
+            <div
+              class="glass-card p-2 sm:p-3 rounded-xl text-center hover:border-purple-400 transition-all hover:scale-105"
+            >
+              <div class="text-lg sm:text-2xl font-extrabold text-slate-800 dark:text-slate-200">
+                Clean
+              </div>
+              <div
+                class="text-[10px] sm:text-[11px] font-semibold text-slate-600 dark:text-slate-400 mt-0.5 leading-tight"
+              >
+                Code Quality
+              </div>
             </div>
           </div>
-
         </div>
       </div>
-
     </div>
 
     <!-- Infinite Tech Marquee Strip -->
-    <div class="mt-16 pt-8 border-t border-slate-200/70">
-      <p class="text-center text-xs font-mono uppercase tracking-widest text-slate-400 font-bold mb-4">
+    <div class="mt-16 pt-8 border-t border-slate-200/70 dark:border-slate-800">
+      <p
+        class="text-center text-xs font-mono uppercase tracking-widest text-slate-400 font-bold mb-4"
+      >
         Core Technologies & Architecture Focus
       </p>
       <div class="marquee-wrapper py-2">
         <div class="marquee-track">
           @for (item of techTicker; track $index) {
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-slate-200/90 shadow-sm text-xs font-mono font-bold text-slate-700 hover:border-blue-400 hover:text-blue-600 transition-colors shrink-0">
+            <div
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200/90 dark:border-slate-700/60 shadow-sm text-xs font-mono font-bold text-slate-700 dark:text-slate-300 hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors shrink-0"
+            >
               <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
               <span>{{ item }}</span>
             </div>
           }
           <!-- Duplicate list for seamless infinite loop -->
           @for (item of techTicker; track $index + '_dup') {
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-slate-200/90 shadow-sm text-xs font-mono font-bold text-slate-700 hover:border-blue-400 hover:text-blue-600 transition-colors shrink-0">
+            <div
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200/90 dark:border-slate-700/60 shadow-sm text-xs font-mono font-bold text-slate-700 dark:text-slate-300 hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors shrink-0"
+            >
               <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
               <span>{{ item }}</span>
             </div>
@@ -213,7 +337,5 @@
         </div>
       </div>
     </div>
-
   </div>
 </section>
-

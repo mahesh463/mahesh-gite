@@ -1,17 +1,27 @@
 <header
   class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
-  [ngClass]="isScrolled() ? 'navbar-gradient-scrolled py-2.5 shadow-md' : 'navbar-gradient py-3.5 shadow-sm'"
+  [ngClass]="
+    isScrolled() ? 'navbar-gradient-scrolled py-2.5 shadow-md' : 'navbar-gradient py-3.5 shadow-sm'
+  "
 >
   <!-- Top Subtle Accent Gradient Stripe -->
-  <div class="absolute top-0 inset-x-0 h-[2.5px] bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600"></div>
+  <div
+    class="absolute top-0 inset-x-0 h-[2.5px] bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600"
+  ></div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
     <!-- Brand Logo & Title -->
-    <a href="#" class="flex items-center gap-2.5 sm:gap-3 group focus:outline-none shrink-0" aria-label="Mahesh Gite Home">
+    <a
+      href="#"
+      class="flex items-center gap-2.5 sm:gap-3 group focus:outline-none shrink-0"
+      aria-label="Mahesh Gite Home"
+    >
       <div
         class="relative w-10 h-10 sm:w-11 sm:h-11 rounded-logo-circle p-[2px] bg-gradient-to-tr from-blue-600 via-indigo-600 to-purple-600 shadow-md shadow-blue-500/25 transition-transform group-hover:scale-105 shrink-0"
       >
-        <div class="w-full h-full rounded-logo-circle bg-white flex items-center justify-center overflow-hidden">
+        <div
+          class="w-full h-full rounded-logo-circle bg-white flex items-center justify-center overflow-hidden"
+        >
           <img
             src="assets/Mahesh_gite_logo.png"
             alt="Mahesh Gite Logo"
@@ -25,14 +35,17 @@
           class="text-base sm:text-lg font-extrabold tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors leading-tight"
           >Mahesh Gite</span
         >
-        <span class="hidden xs:block text-[11px] font-mono font-medium text-slate-500 tracking-wider"
+        <span
+          class="hidden xs:block text-[11px] font-mono font-medium text-slate-500 tracking-wider"
           >Software Developer</span
         >
       </div>
     </a>
 
     <!-- Desktop Navigation Links inside Gradient Capsule (visible on lg: 1024px+) -->
-    <nav class="hidden lg:flex items-center gap-1.5 px-3.5 py-1.5 rounded-2xl bg-gradient-to-r from-blue-100/60 via-indigo-50/70 to-purple-100/60 border border-blue-200/70 shadow-sm backdrop-blur-sm">
+    <nav
+      class="hidden lg:flex items-center gap-1.5 px-3.5 py-1.5 rounded-2xl bg-gradient-to-r from-blue-100/60 via-indigo-50/70 to-purple-100/60 border border-blue-200/70 shadow-sm backdrop-blur-sm"
+    >
       @for (link of navLinks; track link.href) {
         <a
           [href]="link.href"
@@ -43,28 +56,101 @@
       }
     </nav>
 
-    <!-- Header Actions: LinkedIn (visible on lg: 1024px+) -->
+    <!-- Header Actions: Theme Switcher & LinkedIn (visible on lg: 1024px+) -->
     <div class="hidden lg:flex items-center gap-2.5">
+      <!-- Desktop Theme Toggle Button -->
+      <button
+        (click)="toggleTheme()"
+        type="button"
+        class="relative flex items-center justify-center w-10 h-10 rounded-xl border border-slate-200 bg-white/80 text-slate-700 hover:bg-white hover:text-amber-500 shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105 active:scale-95 group focus:outline-none cursor-pointer"
+        [attr.aria-label]="themeService.isDark() ? 'Switch to Light Mode' : 'Switch to Dark Mode'"
+        [title]="themeService.isDark() ? 'Switch to Light Mode' : 'Switch to Dark Mode'"
+      >
+        @if (themeService.isDark()) {
+          <!-- Sun Icon with Warm Gold Glow -->
+          <svg
+            class="w-5 h-5 text-amber-400 group-hover:rotate-90 transition-transform duration-500"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+            />
+          </svg>
+        } @else {
+          <!-- Moon Icon with Deep Indigo Accent -->
+          <svg
+            class="w-5 h-5 text-slate-700 group-hover:text-indigo-600 group-hover:-rotate-12 transition-all duration-500"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+            />
+          </svg>
+        }
+      </button>
+
       <a
         [href]="linkedin"
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-sky-50 border border-sky-200 text-sky-700 hover:bg-sky-100 hover:border-sky-300 transition-all text-xs font-bold shadow-sm hover:shadow-md"
+        class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-sky-50 border border-sky-200 text-sky-700 hover:bg-sky-100 hover:border-sky-300 transition-all text-xs font-bold shadow-sm hover:shadow-md"
         aria-label="LinkedIn profile"
         title="Connect on LinkedIn"
       >
         <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-          <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z"/>
+          <path
+            d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z"
+          />
         </svg>
         <span>LinkedIn</span>
       </a>
     </div>
 
-    <!-- Mobile / Tablet Menu Button (visible below lg) -->
+    <!-- Mobile / Tablet Header Actions (visible below lg) -->
     <div class="flex items-center gap-2 lg:hidden">
+      <!-- Quick Mobile Theme Toggle -->
+      <button
+        (click)="toggleTheme()"
+        type="button"
+        class="p-2.5 rounded-xl text-slate-700 hover:text-slate-900 bg-white/80 hover:bg-white transition-colors focus:outline-none border border-slate-200 shadow-sm cursor-pointer"
+        [attr.aria-label]="themeService.isDark() ? 'Switch to Light Mode' : 'Switch to Dark Mode'"
+        [title]="themeService.isDark() ? 'Switch to Light Mode' : 'Switch to Dark Mode'"
+      >
+        @if (themeService.isDark()) {
+          <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+            />
+          </svg>
+        } @else {
+          <svg class="w-5 h-5 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+            />
+          </svg>
+        }
+      </button>
+
+      <!-- Hamburger Menu Button -->
       <button
         (click)="toggleMobileMenu()"
-        class="p-2.5 rounded-xl text-slate-700 hover:text-slate-900 bg-white/80 hover:bg-white transition-colors focus:outline-none border border-slate-200 shadow-sm"
+        class="p-2.5 rounded-xl text-slate-700 hover:text-slate-900 bg-white/80 hover:bg-white transition-colors focus:outline-none border border-slate-200 shadow-sm cursor-pointer"
         aria-label="Toggle navigation menu"
       >
         @if (!isMobileMenuOpen()) {
@@ -104,7 +190,53 @@
           {{ link.label }}
         </a>
       }
-      <div class="pt-2 space-y-2">
+      <div class="pt-3 space-y-2.5 border-t border-slate-200">
+        <!-- Theme Toggle in Mobile Menu -->
+        <button
+          (click)="toggleTheme()"
+          type="button"
+          class="flex items-center justify-between w-full px-3.5 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-slate-800 font-semibold text-sm cursor-pointer shadow-sm"
+        >
+          <span class="flex items-center gap-2">
+            @if (themeService.isDark()) {
+              <svg
+                class="w-4 h-4 text-amber-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                />
+              </svg>
+              <span>Dark Theme Active</span>
+            } @else {
+              <svg
+                class="w-4 h-4 text-slate-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                />
+              </svg>
+              <span>Light Theme Active</span>
+            }
+          </span>
+          <span
+            class="text-xs font-mono text-blue-600 font-bold px-2 py-0.5 rounded-md bg-blue-50 border border-blue-200"
+          >
+            {{ themeService.isDark() ? 'Switch to Light' : 'Switch to Dark' }}
+          </span>
+        </button>
+
         <a
           [href]="linkedin"
           target="_blank"
@@ -113,7 +245,9 @@
           class="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl text-xs font-bold text-white bg-sky-600 shadow-sm cursor-pointer"
         >
           <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z"/>
+            <path
+              d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z"
+            />
           </svg>
           <span>Connect on LinkedIn</span>
         </a>
@@ -121,4 +255,3 @@
     </div>
   }
 </header>
-
