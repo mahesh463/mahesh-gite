@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <!-- Gradient ring for modern polish -->
+    <linearGradient id="favRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="50%" stop-color="#4f46e5"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <clipPath id="favCircleClip">
+      <circle cx="100" cy="100" r="92"/>
+    </clipPath>
+  </defs>
+
+  <!-- Outside of this circle is 100% TRANSPARENT! -->
+  
+  <!-- Outer subtle gradient accent ring -->
+  <circle cx="100" cy="100" r="96" fill="none" stroke="url(#favRing)" stroke-width="7"/>
+  
+  <!-- Pure white circular background -->
+  <circle cx="100" cy="100" r="92.5" fill="#ffffff"/>
+
+  <!-- MG Monogram & Name -->
+  <g clip-path="url(#favCircleClip)">
+    <!-- Monogram: M & G overlapping in elegant serif -->
+    <text 
+      x="100" 
+      y="120" 
+      font-family="'Playfair Display', 'Times New Roman', Times, 'Georgia', serif" 
+      font-size="88" 
+      font-weight="900" 
+      fill="#0f172a" 
+      text-anchor="middle"
+      letter-spacing="-4"
+    >MG</text>
+    
+    <!-- Subtitle: MAHESH GITE -->
+    <text 
+      x="100" 
+      y="152" 
+      font-family="'Playfair Display', 'Times New Roman', Times, 'Georgia', serif" 
+      font-size="14" 
+      font-weight="800" 
+      fill="#1e293b" 
+      text-anchor="middle" 
+      letter-spacing="4"
+    >MAHESH GITE</text>
+  </g>
+</svg>

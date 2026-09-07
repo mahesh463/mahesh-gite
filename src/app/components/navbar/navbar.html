@@ -1,0 +1,124 @@
+<header
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+  [ngClass]="isScrolled() ? 'navbar-gradient-scrolled py-2.5 shadow-md' : 'navbar-gradient py-3.5 shadow-sm'"
+>
+  <!-- Top Subtle Accent Gradient Stripe -->
+  <div class="absolute top-0 inset-x-0 h-[2.5px] bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+    <!-- Brand Logo & Title -->
+    <a href="#" class="flex items-center gap-2.5 sm:gap-3 group focus:outline-none shrink-0" aria-label="Mahesh Gite Home">
+      <div
+        class="relative w-10 h-10 sm:w-11 sm:h-11 rounded-logo-circle p-[2px] bg-gradient-to-tr from-blue-600 via-indigo-600 to-purple-600 shadow-md shadow-blue-500/25 transition-transform group-hover:scale-105 shrink-0"
+      >
+        <div class="w-full h-full rounded-logo-circle bg-white flex items-center justify-center overflow-hidden">
+          <img
+            src="assets/Mahesh_gite_logo.png"
+            alt="Mahesh Gite Logo"
+            class="w-full h-full object-cover rounded-logo-circle"
+            loading="eager"
+          />
+        </div>
+      </div>
+      <div class="flex flex-col">
+        <span
+          class="text-base sm:text-lg font-extrabold tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors leading-tight"
+          >Mahesh Gite</span
+        >
+        <span class="hidden xs:block text-[11px] font-mono font-medium text-slate-500 tracking-wider"
+          >Software Developer</span
+        >
+      </div>
+    </a>
+
+    <!-- Desktop Navigation Links inside Gradient Capsule (visible on lg: 1024px+) -->
+    <nav class="hidden lg:flex items-center gap-1.5 px-3.5 py-1.5 rounded-2xl bg-gradient-to-r from-blue-100/60 via-indigo-50/70 to-purple-100/60 border border-blue-200/70 shadow-sm backdrop-blur-sm">
+      @for (link of navLinks; track link.href) {
+        <a
+          [href]="link.href"
+          class="px-3 py-1.5 rounded-xl text-sm font-semibold text-slate-700 hover:text-blue-600 hover:bg-white/80 transition-all hover:shadow-xs"
+        >
+          {{ link.label }}
+        </a>
+      }
+    </nav>
+
+    <!-- Header Actions: LinkedIn (visible on lg: 1024px+) -->
+    <div class="hidden lg:flex items-center gap-2.5">
+      <a
+        [href]="linkedin"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-sky-50 border border-sky-200 text-sky-700 hover:bg-sky-100 hover:border-sky-300 transition-all text-xs font-bold shadow-sm hover:shadow-md"
+        aria-label="LinkedIn profile"
+        title="Connect on LinkedIn"
+      >
+        <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+          <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z"/>
+        </svg>
+        <span>LinkedIn</span>
+      </a>
+    </div>
+
+    <!-- Mobile / Tablet Menu Button (visible below lg) -->
+    <div class="flex items-center gap-2 lg:hidden">
+      <button
+        (click)="toggleMobileMenu()"
+        class="p-2.5 rounded-xl text-slate-700 hover:text-slate-900 bg-white/80 hover:bg-white transition-colors focus:outline-none border border-slate-200 shadow-sm"
+        aria-label="Toggle navigation menu"
+      >
+        @if (!isMobileMenuOpen()) {
+          <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        } @else {
+          <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        }
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile / Tablet Dropdown Navigation -->
+  @if (isMobileMenuOpen()) {
+    <div
+      class="lg:hidden bg-white/95 backdrop-blur-xl border-t border-slate-200 px-4 pt-3 pb-6 space-y-2 mt-2 shadow-2xl animate-fadeIn max-h-[calc(100vh-80px)] overflow-y-auto"
+    >
+      @for (link of navLinks; track link.href) {
+        <a
+          [href]="link.href"
+          (click)="closeMobileMenu()"
+          class="block px-3 py-2.5 rounded-lg text-base font-semibold text-slate-700 hover:text-blue-600 hover:bg-white/80 transition-colors"
+        >
+          {{ link.label }}
+        </a>
+      }
+      <div class="pt-2 space-y-2">
+        <a
+          [href]="linkedin"
+          target="_blank"
+          rel="noopener noreferrer"
+          (click)="closeMobileMenu()"
+          class="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl text-xs font-bold text-white bg-sky-600 shadow-sm cursor-pointer"
+        >
+          <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z"/>
+          </svg>
+          <span>Connect on LinkedIn</span>
+        </a>
+      </div>
+    </div>
+  }
+</header>
+

@@ -1,0 +1,21 @@
+<canvas #trailCanvas class="cursor-trail-canvas" aria-hidden="true"></canvas>
+<div #cursorRing class="cursor-ring" aria-hidden="true">
+  <span class="reticle-mark reticle-top"></span>
+  <span class="reticle-mark reticle-bottom"></span>
+  <span class="reticle-mark reticle-left"></span>
+  <span class="reticle-mark reticle-right"></span>
+  <div class="ring-glow-core"></div>
+</div>
+
+<div #cursorDot class="cursor-dot" aria-hidden="true">
+  <span class="dot-inner-core"></span>
+</div>
+
+@for (ripple of ripples; track ripple.id) {
+  <span
+    class="cursor-click-ripple"
+    [style.left.px]="ripple.x"
+    [style.top.px]="ripple.y"
+    aria-hidden="true">
+  </span>
+}

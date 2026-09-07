@@ -1,0 +1,112 @@
+<section id="skills" class="py-24 relative border-t border-slate-200/80">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto space-y-3 mb-16 reveal">
+      <span class="section-badge">
+        <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+        </svg>
+        Technical Arsenal
+      </span>
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+        Skills & Technologies <span class="gradient-text">Matrix</span>
+      </h2>
+      <p class="text-slate-600 text-base sm:text-lg">
+        A comprehensive breakdown of frameworks, architecture patterns, testing tools, and engineering workflows.
+      </p>
+    </div>
+
+    <!-- Skills Category Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+      @for (category of categories; track category.title; let idx = $index) {
+        <div 
+          class="glass-card rounded-3xl p-5 sm:p-7 md:p-9 space-y-6 hover:border-blue-300 transition-all flex flex-col justify-between reveal"
+          [ngClass]="'stagger-' + ((idx % 4) + 1)"
+        >
+          
+          <div class="space-y-6">
+            <!-- Category Header -->
+            <div class="flex flex-wrap sm:flex-nowrap items-center justify-between gap-2.5 pb-4 border-b border-slate-100">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 text-blue-600 flex items-center justify-center shrink-0 shadow-sm">
+                  @if (category.icon === 'code') {
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                    </svg>
+                  } @else if (category.icon === 'palette') {
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
+                    </svg>
+                  } @else if (category.icon === 'database') {
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/>
+                    </svg>
+                  } @else {
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                    </svg>
+                  }
+                </div>
+                <div>
+                  <h3 class="text-base sm:text-xl font-extrabold text-slate-900">
+                    {{ category.title }}
+                  </h3>
+                </div>
+              </div>
+
+              <span class="text-xs font-mono font-bold px-3 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-200 shadow-sm shrink-0">
+                {{ category.badge }}
+              </span>
+            </div>
+
+            <!-- Skill Cards Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+              @for (skill of category.skills; track skill.name) {
+                <div class="p-4 rounded-2xl bg-slate-50/90 border border-slate-200 hover:border-blue-300 hover:bg-white hover:shadow-md hover:-translate-y-0.5 transition-all flex flex-col justify-between group">
+                  <div>
+                    <div class="flex items-start justify-between gap-2">
+                      <h4 class="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                        {{ skill.name }}
+                      </h4>
+                      <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-blue-50 text-blue-700 border border-blue-200 shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        {{ skill.level }}
+                      </span>
+                    </div>
+                    <p class="text-xs text-slate-500 font-medium mt-1.5 leading-relaxed">
+                      {{ skill.tag }}
+                    </p>
+                  </div>
+                </div>
+              }
+            </div>
+          </div>
+
+        </div>
+      }
+    </div>
+
+    <!-- Quick Tech Badges Grid at the bottom -->
+    <div class="mt-12 glass-card rounded-3xl p-7 text-center space-y-3 reveal-scale">
+      <div class="flex flex-wrap items-center justify-center gap-2">
+        <span class="chip-tech">Angular</span>
+        <span class="chip-tech">TypeScript</span>
+        <span class="chip-tech">JavaScript (ES6+)</span>
+        <span class="chip-tech">PrimeNG</span>
+        <span class="chip-tech">Bootstrap</span>
+        <span class="chip-tech">HTML5 / CSS3</span>
+        <span class="chip-tech">REST APIs</span>
+        <span class="chip-tech">React.js</span>
+        <span class="chip-tech">SQL</span>
+        <span class="chip-tech">GitHub</span>
+        <span class="chip-tech">GitLab</span>
+        <span class="chip-tech">BitBucket</span>
+        <span class="chip-tech">SonarQube</span>
+        <span class="chip-tech">Jira</span>
+        <span class="chip-tech">Postman</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+

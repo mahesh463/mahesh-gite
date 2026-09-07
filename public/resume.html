@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahesh Gite - Resume</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 15mm 18mm;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #1e293b;
+      margin: 0;
+      padding: 30px;
+      background: #f8fafc;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .print-bar {
+      position: sticky;
+      top: 15px;
+      max-width: 820px;
+      margin: 0 auto 25px auto;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      padding: 12px 24px;
+      border-radius: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.08);
+      z-index: 100;
+    }
+    .btn-group {
+      display: flex;
+      gap: 10px;
+    }
+    .btn-primary {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 13px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover {
+      background: #1d4ed8;
+    }
+    .btn-secondary {
+      background: #f1f5f9;
+      color: #334155;
+      border: 1px solid #cbd5e1;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 13px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-secondary:hover {
+      background: #e2e8f0;
+    }
+    .resume-sheet {
+      max-width: 820px;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      padding: 45px 50px;
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+      border-radius: 16px;
+    }
+    .header {
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 12px;
+      margin-bottom: 18px;
+    }
+    h1 {
+      margin: 0;
+      font-size: 32px;
+      color: #0f172a;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .subtitle {
+      font-size: 15px;
+      font-weight: 700;
+      color: #334155;
+      letter-spacing: 0.5px;
+      margin-top: 4px;
+      text-transform: uppercase;
+    }
+    .contact-line {
+      font-size: 12.5px;
+      color: #64748b;
+      margin-top: 6px;
+      font-weight: 500;
+    }
+    .contact-line a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+    .section-title {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 4px;
+      margin-top: 18px;
+      margin-bottom: 8px;
+    }
+    p {
+      margin: 4px 0 8px 0;
+      color: #334155;
+      text-align: justify;
+    }
+    ul {
+      margin: 4px 0 8px 0;
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 4px;
+      color: #334155;
+    }
+    .skills-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 4px;
+    }
+    .skills-table td {
+      padding: 3px 6px;
+      vertical-align: top;
+      font-size: 12.5px;
+      color: #334155;
+    }
+    .role-title {
+      font-weight: 700;
+      color: #0f172a;
+      font-size: 13.5px;
+    }
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-top: 12px;
+      margin-bottom: 2px;
+    }
+    .project-name {
+      font-weight: 800;
+      font-size: 14px;
+      color: #0f172a;
+    }
+    .tech-tag {
+      font-size: 11.5px;
+      font-family: monospace;
+      color: #2563eb;
+      font-weight: 600;
+    }
+    .role-subtitle {
+      font-weight: 600;
+      color: #475569;
+      font-size: 12.5px;
+      margin-bottom: 4px;
+    }
+    .page-break {
+      page-break-before: always;
+      margin-top: 25px;
+      padding-top: 15px;
+      border-top: 1px dashed #cbd5e1;
+    }
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+      .print-bar {
+        display: none;
+      }
+      .resume-sheet {
+        border: none;
+        padding: 0;
+        box-shadow: none;
+      }
+      .page-break {
+        border-top: none;
+        margin-top: 0;
+        padding-top: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Action Bar -->
+  <div class="print-bar">
+    <div>
+      <strong style="color: #0f172a; font-size: 14px;">Mahesh Gite — Official Resume</strong>
+      <span style="color: #64748b; font-size: 12px; margin-left: 8px;">(Ready to View, Print & Save as PDF)</span>
+    </div>
+    <div class="btn-group">
+      <button class="btn-primary" onclick="window.print()">
+        <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="vertical-align: middle;">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
+        </svg>
+        Print / Save as PDF
+      </button>
+      <a href="assets/Mahesh_Gite_Resume.pdf" download="Mahesh_Gite_Resume.pdf" class="btn-secondary">Download PDF</a>
+      <a href="/" class="btn-secondary">Back to Portfolio</a>
+    </div>
+  </div>
+
+  <!-- Resume Sheet (Exact 2-Page Content from User's Resume) -->
+  <div class="resume-sheet">
+    
+    <!-- Header -->
+    <div class="header">
+      <h1>Mahesh Gite</h1>
+      <div class="subtitle">SOFTWARE DEVELOPER</div>
+      <div class="contact-line">
+        Sakur, Maharashtra &nbsp;|&nbsp; 
+        <a href="mailto:gitemahesh32@gmail.com">gitemahesh32@gmail.com</a> &nbsp;|&nbsp; 
+        <a href="tel:+919637201245">+91 9637201245</a> &nbsp;|&nbsp;
+        <a href="https://www.linkedin.com/in/mahesh-gite-669738313/" target="_blank">LinkedIn Profile</a>
+      </div>
+    </div>
+
+    <!-- About Me -->
+    <div class="section-title">ABOUT ME :</div>
+    <p>
+      Iamapassionate web developer skilled in Angular and front-end technologies. I have worked on projects related to job portals and education LMS. I like to build teams, collaborate effectively, and manage them to deliver successful projects. I aim to grow as a developer while building applications that make systems more efficient.
+    </p>
+
+    <!-- Technical Skills -->
+    <div class="section-title">TECHNICAL SKILLS:-</div>
+    <table class="skills-table">
+      <tr>
+        <td style="width: 32%;"><strong>Angular</strong></td>
+        <td style="width: 34%;">HTML / CSS / Bootstrap</td>
+        <td style="width: 34%;">API Integration Responsive Design</td>
+      </tr>
+      <tr>
+        <td><strong>Javascript</strong></td>
+        <td>Primeng</td>
+        <td>Design</td>
+      </tr>
+      <tr>
+        <td><strong>React.js (Basic)</strong></td>
+        <td>SQL (Basic)</td>
+        <td>Git Hub / Git Lab / BitBucket</td>
+      </tr>
+    </table>
+
+    <!-- Professional Experience -->
+    <div class="section-title">PROFESSIONAL EXPERIENCE:-</div>
+    <div class="role-title">Software Developer (Frontend Developer – Angular)</div>
+    <ul>
+      <li>Currently working on the <strong>LIMA (Life in Managing Audit)</strong> project as a Frontend Developer.</li>
+      <li>Developed enterprise-level Angular modules and reusable UI components.</li>
+      <li>Built responsive user interfaces using Angular, HTML5, CSS3, Bootstrap, and PrimeNG.</li>
+      <li>Implemented Angular Reactive Forms with dynamic validations.</li>
+      <li>Integrated REST APIs for seamless frontend-backend communication.</li>
+      <li>Developed dashboards, data tables, reports, and CRUD functionalities.</li>
+      <li>Optimized application performance and resolved SonarQube code quality issues.</li>
+      <li>Collaborated with Backend Developers, QA Engineers, and Business Analysts in Agile development.</li>
+      <li>Used Git, Bitbucket, Jira, Outlook, and Postman for version control and project management.</li>
+    </ul>
+
+    <!-- Project 1: LIMA -->
+    <div class="section-title">PROJECTS</div>
+    <div class="project-header">
+      <span class="project-name">LIMA (Life in Managing Audit)</span>
+      <span class="tech-tag">Angular | TypeScript | PrimeNG | REST APIs</span>
+    </div>
+    <div class="role-subtitle">Role: Frontend Developer</div>
+    <ul>
+      <li>Developed audit management modules using Angular.</li>
+      <li>Built reusable and responsive UI components.</li>
+      <li>Developed dynamic forms with complex validations.</li>
+      <li>Integrated frontend with REST APIs.</li>
+      <li>Worked on dashboards, reports, CRUD operations, and bug fixes.</li>
+      <li>Improved UI performance and resolved SonarQube issues.</li>
+    </ul>
+
+    <!-- Page 2 (Exact from Attached Resume) -->
+    <div class="page-break"></div>
+
+    <!-- Project 2: Simplify VMS -->
+    <div class="project-header" style="margin-top: 0;">
+      <span class="project-name">Simplify VMS (Vendor Management System)</span>
+      <span class="tech-tag">Angular | TypeScript | REST APIs</span>
+    </div>
+    <div class="role-subtitle">Role: Frontend Developer</div>
+    <ul>
+      <li>Developed Vendor Management and Configuration modules.</li>
+      <li>Created responsive and reusable UI components.</li>
+      <li>Integrated frontend modules with backend APIs.</li>
+      <li>Implemented form validations and UI enhancements.</li>
+      <li>Worked on production support, bug fixing, and feature improvements.</li>
+    </ul>
+
+    <!-- Languages -->
+    <div class="section-title">LANGUAGES</div>
+    <p style="font-size: 13px; font-weight: 500;">
+      English – Professional &nbsp;|&nbsp; Hindi – Professional &nbsp;|&nbsp; Marathi – Native
+    </p>
+
+    <!-- Key Strengths -->
+    <div class="section-title">KEY STRENGTHS</div>
+    <ul>
+      <li>Angular Development</li>
+      <li>Responsive Web Design</li>
+      <li>Reusable Component Development</li>
+      <li>Clean Code Practices</li>
+      <li>Quick Learner</li>
+    </ul>
+
+    <!-- Hobbies & Interests -->
+    <div class="section-title">HOBBIES & INTERESTS</div>
+    <p style="font-size: 12.5px;">
+      Learning New Technologies &bull; Building Web Applications &bull; UI/UX Development &bull; Team Collaboration &bull; Exploring Modern Frontend Technologies
+    </p>
+
+  </div>
+
+</body>
+</html>

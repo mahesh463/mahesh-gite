@@ -1,0 +1,11 @@
+:host {
+  display: block;
+}
+
+.hero-portrait {
+  background-image: url('../../../assets/Mahesh_img.png');
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+

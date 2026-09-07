@@ -1,0 +1,10 @@
+:host {
+  display: block;
+}
+
+.footer-avatar {
+  background-image: url('../../../assets/Mahesh_gite_logo.png');
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+}

@@ -1,0 +1,112 @@
+<section id="strengths" class="py-24 relative border-t border-slate-200/80">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto space-y-3 reveal">
+      <span class="section-badge">
+        <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+        </svg>
+        Capabilities & Culture
+      </span>
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+        Key Strengths, Languages & <span class="gradient-text">Interests</span>
+      </h2>
+      <p class="text-slate-600 text-base sm:text-lg">
+        The pillars that define my engineering discipline, communication, and passion for continuous innovation.
+      </p>
+    </div>
+
+    <!-- 1. Key Strengths Grid -->
+    <div>
+      <h3 class="text-xs font-mono uppercase tracking-widest text-blue-700 font-extrabold mb-6 flex items-center gap-2 reveal">
+        <span class="w-2.5 h-2.5 rounded-full bg-blue-600 animate-pulse"></span>
+        Core Capabilities
+      </h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        @for (strength of strengths; track strength.title; let idx = $index) {
+          <div 
+            class="glass-card rounded-3xl p-7 space-y-3 hover:border-blue-400 transition-all flex flex-col justify-between group relative overflow-hidden reveal"
+            [ngClass]="'stagger-' + ((idx % 3) + 1)"
+          >
+            <!-- Top subtle accent bar -->
+            <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200/80">
+                  {{ strength.badge }}
+                </span>
+              </div>
+              <h4 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">{{ strength.title }}</h4>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">{{ strength.desc }}</p>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- 2. Row: Languages & Hobbies/Interests -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      
+      <!-- Languages Card -->
+      <div class="glass-card rounded-3xl p-7 sm:p-9 space-y-6 reveal-left">
+        <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+          <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center border border-indigo-200 shadow-sm">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/>
+              </svg>
+            </div>
+            Languages Known
+          </h3>
+          <span class="text-xs font-mono font-bold text-slate-400">Multilingual</span>
+        </div>
+
+        <div class="space-y-3">
+          @for (lang of languages; track lang.name) {
+            <div class="flex items-center justify-between p-4 rounded-2xl bg-white/70 border border-slate-200/80 hover:border-indigo-300 hover:translate-x-1 transition-all shadow-sm">
+              <div class="flex items-center gap-3.5">
+                <span class="text-2xl">{{ lang.flag }}</span>
+                <div>
+                  <h4 class="font-bold text-slate-900 text-sm sm:text-base">{{ lang.name }}</h4>
+                  <p class="text-xs text-slate-500 font-medium">{{ lang.level }}</p>
+                </div>
+              </div>
+              <span class="text-xs font-mono font-bold text-indigo-700 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-200">
+                {{ lang.tag }}
+              </span>
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- Hobbies & Interests Card -->
+      <div class="glass-card rounded-3xl p-7 sm:p-9 space-y-6 reveal-right">
+        <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+          <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center border border-blue-200 shadow-sm">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            Hobbies & Interests
+          </h3>
+          <span class="text-xs font-mono font-bold text-slate-400">Passions</span>
+        </div>
+
+        <div class="space-y-3">
+          @for (interest of interests; track interest) {
+            <div class="flex items-center gap-3.5 p-4 rounded-2xl bg-white/70 border border-slate-200/80 hover:border-blue-300 hover:translate-x-1 transition-all shadow-sm group">
+              <div class="w-2.5 h-2.5 rounded-full bg-blue-500 shrink-0 group-hover:scale-125 transition-transform"></div>
+              <span class="text-sm font-bold text-slate-800">{{ interest }}</span>
+            </div>
+          }
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
