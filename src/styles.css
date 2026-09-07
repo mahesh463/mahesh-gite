@@ -1,24 +1,25 @@
 /* -------------------------------------------------------------
-   Mahesh Gite Portfolio - Modern, Bright & Clean Light Theme
+   Mahesh Gite Portfolio - Modern Dynamic Theme System (Light & Dark)
 ------------------------------------------------------------- */
 
-:root {
+:root,
+[data-theme="light"] {
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
-  /* Color Palette - Bright, Airy & Modern */
+  /* Color Palette - Bright, Airy & Modern Light */
   --bg-main: #f8fafc;
   --card-bg: #ffffff;
   --card-border: #e2e8f0;
   --card-hover-border: #93c5fd;
-  
+
   --nav-bg: rgba(255, 255, 255, 0.94);
   --nav-border: #e2e8f0;
-  
+
   --text-heading: #0f172a;
   --text-body: #475569;
   --text-muted: #64748b;
-  
+
   --chip-bg: #f8fafc;
   --chip-border: #e2e8f0;
   --chip-text: #334155;
@@ -34,6 +35,39 @@
   color-scheme: light;
 }
 
+[data-theme="dark"],
+html.dark {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Color Palette - Premium Midnight Dark */
+  --bg-main: #0b0f19;
+  --card-bg: rgba(15, 23, 42, 0.82);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --card-hover-border: rgba(96, 165, 250, 0.6);
+
+  --nav-bg: rgba(11, 15, 25, 0.94);
+  --nav-border: rgba(255, 255, 255, 0.08);
+
+  --text-heading: #f8fafc;
+  --text-body: #94a3b8;
+  --text-muted: #64748b;
+
+  --chip-bg: rgba(30, 41, 59, 0.85);
+  --chip-border: rgba(255, 255, 255, 0.1);
+  --chip-text: #cbd5e1;
+
+  --badge-bg: rgba(37, 99, 235, 0.18);
+  --badge-border: rgba(59, 130, 246, 0.35);
+  --badge-text: #93c5fd;
+
+  --input-bg: #0f172a;
+  --input-border: #334155;
+  --input-text: #f8fafc;
+
+  color-scheme: dark;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -41,14 +75,17 @@
 html {
   font-family: var(--font-sans);
   scroll-behavior: smooth;
-  color-scheme: light;
   overflow-x: hidden;
   max-width: 100%;
 }
 
+html.dark {
+  color-scheme: dark;
+}
+
 body {
   background-color: var(--bg-main);
-  background-image: 
+  background-image:
     radial-gradient(rgba(148, 163, 184, 0.16) 1px, transparent 1px),
     radial-gradient(at 50% 0%, rgba(59, 130, 246, 0.05) 0px, transparent 50%);
   background-size: 24px 24px, 100% 100%;
@@ -59,25 +96,44 @@ body {
   min-height: 100vh;
 }
 
+/* Smooth Theme Switching Transitions */
+body,
+.glass-card,
+.navbar-gradient,
+.navbar-gradient-scrolled,
+nav,
+.chip-tech,
+.section-badge,
+.p-inputtext,
+textarea {
+  transition: background-color 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+    color 0.2s ease,
+    box-shadow 0.28s ease;
+}
+
 /* Custom Sleek Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: #f1f5f9;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #cbd5e1;
   border-radius: 9999px;
   border: 2px solid #f1f5f9;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
 }
 
 /* Clean Modern Card */
 .glass-card {
-  background: #ffffff !important;
+  background: var(--card-bg) !important;
   border: 1px solid var(--card-border) !important;
   box-shadow: 0 2px 15px -3px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -86,7 +142,7 @@ body {
 .glass-card:hover {
   border-color: var(--card-hover-border) !important;
   transform: translateY(-4px);
-  box-shadow: 0 20px 30px -10px rgba(37, 99, 235, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 20px 30px -10px rgba(37, 99, 235, 0.12), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
 }
 
 /* Glass Nav with Gradient Background */
@@ -145,9 +201,9 @@ body {
   font-size: 0.75rem;
   font-family: var(--font-mono);
   font-weight: 600;
-  background: #f8fafc !important;
-  border: 1px solid #e2e8f0 !important;
-  color: #334155 !important;
+  background: var(--chip-bg) !important;
+  border: 1px solid var(--chip-border) !important;
+  color: var(--chip-text) !important;
   transition: all 0.2s ease;
 }
 
@@ -155,6 +211,12 @@ body {
   border-color: #93c5fd !important;
   color: #1d4ed8 !important;
   background: #eff6ff !important;
+}
+
+html.dark .chip-tech:hover {
+  border-color: #60a5fa !important;
+  color: #93c5fd !important;
+  background: rgba(37, 99, 235, 0.25) !important;
 }
 
 /* Primary Button */
@@ -223,20 +285,234 @@ body {
 }
 
 /* Inputs */
-.p-inputtext, textarea {
-  background: #ffffff !important;
-  border: 1px solid #cbd5e1 !important;
-  color: #0f172a !important;
+.p-inputtext,
+textarea {
+  background: var(--input-bg) !important;
+  border: 1px solid var(--input-border) !important;
+  color: var(--input-text) !important;
   border-radius: 0.75rem !important;
   padding: 0.75rem 1rem !important;
   font-size: 0.9375rem !important;
   transition: all 0.2s ease !important;
 }
 
-.p-inputtext:focus, textarea:focus {
+.p-inputtext:focus,
+textarea:focus {
   border-color: #2563eb !important;
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15) !important;
   outline: none !important;
+}
+
+html.dark .p-inputtext:focus,
+html.dark textarea:focus {
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25) !important;
+}
+
+/* -------------------------------------------------------------
+   Comprehensive Dark Theme Engine Overrides
+------------------------------------------------------------- */
+html.dark body {
+  background-color: #0b0f19 !important;
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    radial-gradient(at 50% 0%, rgba(37, 99, 235, 0.14) 0px, transparent 65%) !important;
+  color: #94a3b8 !important;
+}
+
+html.dark .navbar-gradient {
+  background: linear-gradient(135deg, rgba(11, 15, 25, 0.94) 0%, rgba(15, 23, 42, 0.95) 50%, rgba(17, 24, 39, 0.94) 100%) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+html.dark .glass-nav,
+html.dark .navbar-gradient-scrolled {
+  background: linear-gradient(135deg, rgba(11, 15, 25, 0.98) 0%, rgba(15, 23, 42, 0.98) 50%, rgba(17, 24, 39, 0.98) 100%) !important;
+  border-bottom: 1px solid rgba(59, 130, 246, 0.25) !important;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.65);
+}
+
+/* Dark mode desktop nav capsule */
+html.dark nav.rounded-2xl {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.65) 0%, rgba(15, 23, 42, 0.8) 100%) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+html.dark nav.rounded-2xl a {
+  color: #cbd5e1 !important;
+}
+
+html.dark nav.rounded-2xl a:hover {
+  color: #60a5fa !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Dark mode mobile menu */
+html.dark .lg\:hidden.bg-white\/95 {
+  background-color: rgba(11, 15, 25, 0.98) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+html.dark .lg\:hidden.bg-white\/95 a {
+  color: #cbd5e1 !important;
+}
+
+html.dark .lg\:hidden.bg-white\/95 a:hover {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  color: #60a5fa !important;
+}
+
+/* Dark mode typography */
+html.dark .text-slate-900,
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4,
+html.dark h5,
+html.dark h6 {
+  color: #f8fafc !important;
+}
+
+html.dark .text-slate-800 {
+  color: #e2e8f0 !important;
+}
+
+html.dark .text-slate-700 {
+  color: #cbd5e1 !important;
+}
+
+html.dark .text-slate-600 {
+  color: #94a3b8 !important;
+}
+
+html.dark .text-slate-500 {
+  color: #64748b !important;
+}
+
+html.dark .text-slate-400 {
+  color: #94a3b8 !important;
+}
+
+/* Dark mode borders */
+html.dark .border-slate-200,
+html.dark .border-slate-200\/80,
+html.dark .border-slate-200\/70,
+html.dark .border-slate-100 {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Dark mode background tints for cards and badges */
+html.dark .bg-white:not(.rounded-logo-circle):not(.rounded-logo-circle *) {
+  background-color: rgba(15, 23, 42, 0.8) !important;
+}
+
+/* Translucent white & slate nested sub-cards in dark mode */
+html.dark [class*="bg-white/"]:not(.rounded-logo-circle):not(.rounded-logo-circle *),
+html.dark [class*="bg-slate-50"]:not(.rounded-logo-circle):not(.rounded-logo-circle *),
+html.dark [class*="bg-slate-100"]:not(.rounded-logo-circle):not(.rounded-logo-circle *) {
+  background-color: rgba(30, 41, 59, 0.55) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark [class*="bg-white/"]:hover:not(.rounded-logo-circle):not(.rounded-logo-circle *),
+html.dark [class*="bg-slate-50"]:hover:not(.rounded-logo-circle):not(.rounded-logo-circle *) {
+  background-color: rgba(30, 41, 59, 0.82) !important;
+  border-color: rgba(96, 165, 250, 0.4) !important;
+}
+
+/* All pill badges and icon boxes in dark mode */
+html.dark [class*="bg-blue-50"],
+html.dark [class*="bg-blue-100"] {
+  background-color: rgba(37, 99, 235, 0.2) !important;
+  border-color: rgba(59, 130, 246, 0.35) !important;
+  color: #93c5fd !important;
+}
+
+html.dark [class*="bg-indigo-50"],
+html.dark [class*="bg-indigo-100"] {
+  background-color: rgba(99, 102, 241, 0.2) !important;
+  border-color: rgba(129, 140, 248, 0.35) !important;
+  color: #c7d2fe !important;
+}
+
+html.dark [class*="bg-emerald-50"],
+html.dark [class*="bg-emerald-100"] {
+  background-color: rgba(16, 185, 129, 0.2) !important;
+  border-color: rgba(52, 211, 153, 0.35) !important;
+  color: #6ee7b7 !important;
+}
+
+html.dark [class*="bg-sky-50"],
+html.dark [class*="bg-sky-100"] {
+  background-color: rgba(14, 165, 233, 0.2) !important;
+  border-color: rgba(56, 189, 248, 0.35) !important;
+  color: #7dd3fc !important;
+}
+
+html.dark [class*="bg-amber-50"],
+html.dark [class*="bg-amber-100"] {
+  background-color: rgba(245, 158, 11, 0.2) !important;
+  border-color: rgba(251, 191, 36, 0.35) !important;
+  color: #fcd34d !important;
+}
+
+/* Keep circular brand logo crisp white background inside logo ring */
+html.dark .rounded-logo-circle.bg-white,
+html.dark .rounded-logo-circle>div {
+  background-color: #ffffff !important;
+}
+
+/* Dark mode colored borders & texts for badges */
+html.dark .border-blue-200,
+html.dark .border-blue-200\/80,
+html.dark .border-blue-200\/70 {
+  border-color: rgba(59, 130, 246, 0.3) !important;
+}
+
+html.dark .border-indigo-200 {
+  border-color: rgba(99, 102, 241, 0.3) !important;
+}
+
+html.dark .border-emerald-200 {
+  border-color: rgba(16, 185, 129, 0.3) !important;
+}
+
+html.dark .border-sky-200 {
+  border-color: rgba(14, 165, 233, 0.3) !important;
+}
+
+html.dark .text-blue-700,
+html.dark .text-blue-600 {
+  color: #60a5fa !important;
+}
+
+html.dark .text-indigo-700,
+html.dark .text-indigo-600 {
+  color: #a5b4fc !important;
+}
+
+html.dark .text-emerald-700,
+html.dark .text-emerald-800 {
+  color: #6ee7b7 !important;
+}
+
+html.dark .text-sky-700 {
+  color: #7dd3fc !important;
+}
+
+/* Dark mode custom scrollbar */
+html.dark ::-webkit-scrollbar-track {
+  background: #090d16;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+  border: 2px solid #090d16;
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
 }
 
 /* -------------------------------------------------------------
@@ -291,36 +567,62 @@ body {
 }
 
 /* Stagger Delays */
-.stagger-1 { transition-delay: 80ms; }
-.stagger-2 { transition-delay: 160ms; }
-.stagger-3 { transition-delay: 240ms; }
-.stagger-4 { transition-delay: 320ms; }
-.stagger-5 { transition-delay: 400ms; }
-.stagger-6 { transition-delay: 480ms; }
+.stagger-1 {
+  transition-delay: 80ms;
+}
+
+.stagger-2 {
+  transition-delay: 160ms;
+}
+
+.stagger-3 {
+  transition-delay: 240ms;
+}
+
+.stagger-4 {
+  transition-delay: 320ms;
+}
+
+.stagger-5 {
+  transition-delay: 400ms;
+}
+
+.stagger-6 {
+  transition-delay: 480ms;
+}
 
 /* Keyframe Animations */
 @keyframes floatSlow {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px) rotate(0deg) scale(1);
   }
+
   50% {
     transform: translateY(-16px) rotate(3deg) scale(1.05);
   }
 }
 
 @keyframes floatReverse {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px) rotate(0deg) scale(1);
   }
+
   50% {
     transform: translateY(14px) rotate(-3deg) scale(0.96);
   }
 }
 
 @keyframes floatPortrait {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-10px);
   }
@@ -331,10 +633,12 @@ body {
     transform: scale(0.95);
     box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7);
   }
+
   70% {
     transform: scale(1);
     box-shadow: 0 0 0 10px rgba(37, 99, 235, 0);
   }
+
   100% {
     transform: scale(0.95);
     box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
@@ -346,10 +650,12 @@ body {
     transform: scale(0.95);
     box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
   }
+
   70% {
     transform: scale(1);
     box-shadow: 0 0 0 9px rgba(16, 185, 129, 0);
   }
+
   100% {
     transform: scale(0.95);
     box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
@@ -360,14 +666,22 @@ body {
   0% {
     transform: translateX(0%);
   }
+
   100% {
     transform: translateX(-50%);
   }
 }
 
 @keyframes cursorBlink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
 }
 
 .animate-float-slow {
@@ -435,7 +749,9 @@ body {
 body {
   cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M4 3L11.5 21L14.2 13.8L21.4 11.1L4 3Z' fill='url(%23g)' stroke='%23ffffff' stroke-width='1.5' stroke-linejoin='round'/%3E%3Cdefs%3E%3ClinearGradient id='g' x1='4' y1='3' x2='21.4' y2='21' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%237c3aed'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E") 4 3, auto;
 }
+
 @media (hover: hover) and (pointer: fine) {
+
   body.has-custom-cursor,
   body.has-custom-cursor a,
   body.has-custom-cursor button,
@@ -448,4 +764,3 @@ body {
     cursor: none !important;
   }
 }
-
